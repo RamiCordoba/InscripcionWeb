@@ -18,23 +18,15 @@ namespace InscripcionWeb.Controllers
         {
             _context = context;
         }
-<<<<<<< HEAD
         #region DetallesAlumnosMaterias
-=======
-
->>>>>>> 17812bc65d23fedd14af6ccc124f465aafe66a42
         // GET: DetallesAlumnosMaterias
         public async Task<IActionResult> Index()
         {
             var inscripcionWebContext = _context.DetallesAlumnosMaterias.Include(d => d.Alumno).Include(d => d.Materia);
             return View(await inscripcionWebContext.ToListAsync());
         }
-<<<<<<< HEAD
         #endregion
         #region Detalles
-=======
-
->>>>>>> 17812bc65d23fedd14af6ccc124f465aafe66a42
         // GET: DetallesAlumnosMaterias/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -54,12 +46,8 @@ namespace InscripcionWeb.Controllers
 
             return View(detalleAlumnoMateria);
         }
-<<<<<<< HEAD
         #endregion
         #region Crear
-=======
-
->>>>>>> 17812bc65d23fedd14af6ccc124f465aafe66a42
         // GET: DetallesAlumnosMaterias/Create
         public IActionResult Create()
         {
@@ -86,12 +74,8 @@ namespace InscripcionWeb.Controllers
             ViewData["MateriaId"] = new SelectList(_context.Materias, "Id", "Nombre", detalleAlumnoMateria.MateriaId);
             return View(detalleAlumnoMateria);
         }
-<<<<<<< HEAD
         #endregion
         #region Editar
-=======
-
->>>>>>> 17812bc65d23fedd14af6ccc124f465aafe66a42
         // GET: DetallesAlumnosMaterias/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -146,12 +130,8 @@ namespace InscripcionWeb.Controllers
             ViewData["MateriaId"] = new SelectList(_context.Materias, "Id", "Id", detalleAlumnoMateria.MateriaId);
             return View(detalleAlumnoMateria);
         }
-<<<<<<< HEAD
         #endregion
         #region Eliminar
-=======
-
->>>>>>> 17812bc65d23fedd14af6ccc124f465aafe66a42
         // GET: DetallesAlumnosMaterias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -182,11 +162,7 @@ namespace InscripcionWeb.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-<<<<<<< HEAD
         #endregion
-=======
-
->>>>>>> 17812bc65d23fedd14af6ccc124f465aafe66a42
         private bool DetalleAlumnoMateriaExists(int id)
         {
             return _context.DetallesAlumnosMaterias.Any(e => e.Id == id);
