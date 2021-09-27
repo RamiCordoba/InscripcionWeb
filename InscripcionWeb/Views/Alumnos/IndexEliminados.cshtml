@@ -1,0 +1,55 @@
+﻿@model IEnumerable<InscripcionWeb.Models.Alumno>
+
+@{ ViewData["Title"] = "Alumnos/as Eliminados/as";}
+
+<h1>Listado de Alumnos Eliminados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-action="Restaurar" asp-route-id="@item.Id">Restaurar</a>
+            </td>
+            <td>
+                <a asp-action="EliminacionDefinitiva" asp-route-id="@item.Id">Eliminación Definitiva</a>
+            </td>
+        </tr>}
+    </tbody>
+</table>

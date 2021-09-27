@@ -1,0 +1,33 @@
+﻿@model InscripcionWeb.Models.Alumno
+
+@{
+    ViewData["Title"] = "Restaurar";
+}
+
+<h1>Restaurar</h1>
+
+<h3>¿Estas seguro/a que quiere restaurar este/a Alumno/a?</h3>
+<div>
+    <h4>Carrera</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Restaurar">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Restaurar" class="btn btn-success" /> |
+        <a asp-action="IndexEliminados">Volver a la lista</a>
+    </form>
+</div>

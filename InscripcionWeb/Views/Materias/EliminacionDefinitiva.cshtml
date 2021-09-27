@@ -1,0 +1,27 @@
+﻿@model InscripcionWeb.Models.Materia
+
+@{
+    ViewData["Title"] = "EliminacionDefinitiva";
+}
+
+<h1>Eliminacion Definitiva</h1>
+
+<h3>¿Estas seguro/a que deseas eliminar de forma definitiva a la Materia?</h3>
+<div>
+    <h4>Eliminar Materia</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+
+    <form asp-action="EliminacionDefinitiva">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminacion Definitiva" class="btn btn-danger" /> |
+        <a asp-action="IndexEliminadas">Regresar al listado</a>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<InscripcionWeb.Models.AñoCursado>
+
+@{
+    ViewData["Title"] = "Años de Cursados Eliminados";
+}
+
+<h1>Listado de Años de Cursado Eliminados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carrera)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Carrera.Nombre)
+                </td>
+                <td>
+                    <a asp-action="Restaurar" asp-route-id="@item.Id">Restaurar</a> |
+                    <a asp-action="EliminacionDefinitiva" asp-route-id="@item.Id">Eliminar Definitivamente</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

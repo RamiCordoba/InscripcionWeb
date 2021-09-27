@@ -1,0 +1,33 @@
+﻿@model InscripcionWeb.Models.AñoCursado
+
+@{
+    ViewData["Title"] = "Restaurar";
+}
+
+<h1>Restaurar</h1>
+
+<h3>¿Estas seguro/a que quiere restaurar este Año de Cursado?</h3>
+<div>
+    <h4>Años de Cursados</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carrera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carrera.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Restaurar">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Restaurar" class="btn btn-success" /> |
+        <a asp-action="IndexEliminados">Volver a la lista</a>
+    </form>
+</div>

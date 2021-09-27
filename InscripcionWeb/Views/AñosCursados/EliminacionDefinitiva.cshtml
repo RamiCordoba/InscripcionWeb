@@ -1,0 +1,31 @@
+﻿@model InscripcionWeb.Models.AñoCursado
+
+@{ ViewData["Title"] = "EliminacionDefinitiva"; }
+
+<h1>ELiminación Definitiva</h1>
+
+<h3>¿Estás seguro/a que deseas eliminar de manera definitiva este Año de Cursado?</h3>
+<div>
+    <h4>Año de Cursado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carrera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carrera.Nombre)
+        </dd>
+    </dl>
+
+    <form asp-action="EliminacionDefinitiva">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminación definitiva" class="btn btn-danger" /> |
+        <a asp-action="IndexEliminados">Volver a la lista</a>
+    </form>
+</div>

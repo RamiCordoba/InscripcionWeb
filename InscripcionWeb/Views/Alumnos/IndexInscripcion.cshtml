@@ -1,0 +1,55 @@
+﻿@model IEnumerable<InscripcionWeb.Models.Alumno>
+
+@{
+    ViewData["Title"] = "Inscripción";
+}
+
+<h1>Inscripciónn</h1>
+
+<form action="/Alumnos/IndexInscripcion" method="get">
+    <div class="form-group">
+        <input type="hidden" name="opcion" value="1" />
+        <input type="text" name="txtBusqueda" id="txtBusqueda"/>
+        <input type="submit" value="Buscar" class="btn btn-primary btn-lg" />
+    </div>
+</form>
+
+<form action="/Alumnos/IndexInscripcion" method="get">
+    <input type="submit" value="Mostar todos" class="btn btn-outline-success" />
+</form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dni)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Apellido)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Dni)
+    </td>
+    <td>
+        <a asp-action="Inscribir" asp-route-id="@item.Id">Inscribir</a>
+    </td>
+</tr>
+}
+        </tbody>
+    </table>
